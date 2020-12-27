@@ -1,25 +1,58 @@
+import React, { Component } from 'react'
 import logo from './logo.svg';
 import './App.css';
+import { Login } from './components/login_register/Index';
+import { Register } from './components/login_register/Index';
 
-function App() {
+
+class App extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       lvri : true
+    }
+  }
+
+  changeState() {
+    const { lvri } = this.state
+    if(lvri){
+      this.rightSide.classList.remove("right")
+      this.rightSide.classList.add("left")
+    } else {
+      this.rightSide.classList.remove("left")
+      this.rightSide.classList.add("right")
+    }
+    this.setState( (prevState) => ({
+      lvri : !prevState.lvri
+    }))
+  }
+  
+  render() {
+    const { lvri } = this.state 
+    const current = lvri ? "Register" : "Login"
+    return (
+      <div className="App">
+        <div className="login">
+          <div className="container" ref={ref => this.container = ref}>
+            { lvri && <Login containerRef={ref => this.current = ref}/>}
+            { !lvri && <Register containerRef={ref => this.current = ref}/>}
+          </div>
+          <RightSide current={current} containerRef={ref => this.rightSide = ref} onClick={this.changeState.bind(this)}/>
+        </div>
+      </div>
+    )
+  }
+}
+
+const RightSide = props => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div className="right-side" ref={props.containerRef} onClick={props.onClick}>
+          <div>
+              <div>{props.current}</div>
+          </div>
+      </div>
+  )
 }
 
 export default App;
