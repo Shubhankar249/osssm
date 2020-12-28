@@ -21,11 +21,13 @@ export class Login extends Component {
 
         console.log(loginData)
 
-        axios.post('login', loginData)
-            .then(res => this.props.submitLogin(res.data.token))
+        axios.post('user/login', loginData)
+            .then(res => {
+                console.log(res)
+                this.props.submitLogin(res.data.token)
+            })
             .catch(e => {
                 console.log("error logging in because of ", e)
-                this.props.submitLogin("dummytoken12243435")
             })
 
 
