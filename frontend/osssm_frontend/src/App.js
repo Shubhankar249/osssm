@@ -9,6 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props)
   
+    //localStorage.clear()
     const t = localStorage.getItem('token')
 
     this.state = {

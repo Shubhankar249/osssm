@@ -9,17 +9,19 @@ export class Register extends Component {
     submitRegister = (e) => {
         e.preventDefault()
         const registerData = {
+            firstname : '',
+            lastname : '',
             username : this.username,
             email : this.email,
             password : this.password
         }
         
-        axios.post('register', registerData)
+        axios.post('users/signup', registerData)
             .then(res => {
-                console.log(res)
+                console.log("then", res)
             })
             .catch(e => {
-                console.log(e)
+                console.log("error", e)
             })
     }
     

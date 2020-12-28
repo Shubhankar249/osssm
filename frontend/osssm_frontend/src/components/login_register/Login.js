@@ -21,7 +21,7 @@ export class Login extends Component {
 
         console.log(loginData)
 
-        axios.post('user/login', loginData)
+        axios.post('users/login', loginData)
             .then(res => {
                 console.log(res)
                 this.props.submitLogin(res.data.token)
