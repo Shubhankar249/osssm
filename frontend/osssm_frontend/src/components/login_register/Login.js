@@ -1,34 +1,61 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 export class Login extends Component {
     constructor(props) {
         super(props)
+
+        this.state = {
+            username: '',
+            password: ''
+        }
     }
-    
+
+    submitLogin = (e) => {
+        e.preventDefault()
+
+        const loginData = {
+            username: this.username,
+            password: this.password
+        }
+
+        console.log(loginData)
+
+        axios.post('login', loginData)
+            .then(res => this.props.submitLogin(res.data.token))
+            .catch(e => {
+                console.log("error logging in because of ", e)
+                this.props.submitLogin("dummytoken12243435")
+            })
+
+
+    }
+
     render() {
         return (
             <div className="" ref={this.props.containerRef}>
                 <div className="">Login</div>
                 <div className="content">
                     <div className="">
-                        <img src=""/>
+                        <img src="" />
                     </div>
                     <div className="">
-                        <form className="">
-                            <div class="">
+                        <form className="" onSubmit={this.submitLogin}>
+                            <div className="">
                                 <label htmlFor="username">Username</label>
-                                <input type="text" name="username" placeholder="Username"/>
+                                <input onChange={e => this.username = e.target.value} type="text" name="username" placeholder="Username" />
                             </div>
-                            <div class="">
+                            <div className="">
                                 <label htmlFor="password">Password</label>
-                                <input type="password" name="password" placeholder="Password"/>
+                                <input onChange={e => this.password = e.target.value} type="password" name="password" placeholder="Password" />
+                            </div>
+                            <div className="">
+                                <button className="" type="submit">Login</button>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div className="">
-                    <button className="" type="submit">Login</button>
-                </div>
+
             </div>
         )
     }

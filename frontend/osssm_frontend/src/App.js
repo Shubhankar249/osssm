@@ -9,13 +9,17 @@ class App extends Component {
   constructor(props) {
     super(props)
   
+    const t = localStorage.getItem('token')
+
     this.state = {
-       lvri : true
+       lvri : true,
+       token : t
     }
   }
 
   changeState() {
-    const { lvri } = this.state
+    const { lvri} = this.state
+    
     if(lvri){
       this.rightSide.classList.remove("right")
       this.rightSide.classList.add("left")
@@ -27,22 +31,35 @@ class App extends Component {
       lvri : !prevState.lvri
     }))
   }
+
+  submitLogin = (t) => {
+    console.log("login submitted , token is = " + t)
+    localStorage.setItem('token', t)
+    this.setState({
+      token : t
+    })
+  } 
   
   render() {
-    const { lvri } = this.state 
+    const { lvri, token } = this.state 
     const current = lvri ? "Register" : "Login"
-    return (
-      <div className="App">
-        <div className="login">
-          <div className="container" ref={ref => this.container = ref}>
-            { lvri && <Login containerRef={ref => this.current = ref}/>}
-            { !lvri && <Register containerRef={ref => this.current = ref}/>}
+    if(token) {
+      return <div>{token}</div>
+    } else{
+      return (
+        <div className="App">
+          <div className="login">
+            <div className="container" ref={ref => this.container = ref}>
+              { lvri && <Login submitLogin={this.submitLogin} containerRef={ref => this.current = ref}/>}
+              { !lvri && <Register containerRef={ref => this.current = ref}/>}
+            </div>
+            <RightSide current={current} containerRef={ref => this.rightSide = ref} onClick={this.changeState.bind(this)}/>
           </div>
-          <RightSide current={current} containerRef={ref => this.rightSide = ref} onClick={this.changeState.bind(this)}/>
         </div>
-      </div>
-    )
-  }
+      )
+    }
+    }
+    
 }
 
 const RightSide = props => {
