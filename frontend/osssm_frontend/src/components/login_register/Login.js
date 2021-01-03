@@ -29,8 +29,6 @@ export class Login extends Component {
             .catch(e => {
                 console.log("error logging in because of ", e)
             })
-
-
     }
 
     render() {

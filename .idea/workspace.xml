@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5779d0af-97b3-4ed6-8eea-e5d2269fb547" name="Default Changelist" comment="" />
+    <list default="true" id="5779d0af-97b3-4ed6-8eea-e5d2269fb547" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/server/models/groups.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/server/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/server/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/osssm_frontend/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/osssm_frontend/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/osssm_frontend/src/components/login_register/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/osssm_frontend/src/components/login_register/Login.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1m6PejLD8TUgrrpFF4JVEu9g280" />
   <component name="ProjectViewState">
@@ -38,5 +54,23 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1897" height="278" key="GridCell.Tab.0.bottom" timestamp="1609659393608">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1897" height="278" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1609659393608" />
+    <state width="1897" height="278" key="GridCell.Tab.0.center" timestamp="1609659393607">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1897" height="278" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1609659393607" />
+    <state width="1897" height="278" key="GridCell.Tab.0.left" timestamp="1609659393606">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1897" height="278" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1609659393606" />
+    <state width="1897" height="278" key="GridCell.Tab.0.right" timestamp="1609659393608">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1897" height="278" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1609659393608" />
   </component>
 </project>

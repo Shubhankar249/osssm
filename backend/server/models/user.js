@@ -15,7 +15,6 @@ var User = new Schema(
           },
           email : {
             type : mongoose.SchemaTypes.Email
-            
           }
     }
 );
